@@ -1,92 +1,122 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- FONT -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
-
-        <script src="index.js"></script>
-
-         <!-- METADATA -->
-        <title>Voxoun Games</title>
-    	<meta content="Voxoun Games" property="og:title" />
-    	<meta content="A small game studio based in Denmark!" property="og:description" />
-    	<meta content="https://voxoun.games" property="og:url" />
-    	<meta content="https://voxoun.games/Images/VoxounGamesSmall.png" property="og:image" />
-    	<meta content="#000000" data-react-helmet="true" name="theme-color" />
-
-         <!-- ICON -->
-        <link rel = "icon" href = "Images/VoxounGamesSmall.png" type = "image/x-icon">
-
-        <!--
-        <div class="header">
-            <div id="navbuttons" style="vertical-align: middle; display: inline-block;">
-                <a href="https://fishgamevr.com/"><img src="https://fishgamevr.com/FishGameTopThing.png" width="107" height="40"></a>
-                <a href="https://soundcloud.com/fishgame"><img src="https://fishgamevr.com/Headphones.png" width="40" height="40"></a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voxoun Games</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <!-- Navigation logo -->
+      <a class="nav-logo" href="https://voxoun.games">
+        <img src="Images/main-logo.png" alt="Voxoun Games" style="max-width:100px;">
+      </a>
+      <!-- Navigation menu -->
+      <ul>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero section with main logo and welcome message -->
+  <section class="hero">
+    <img src="Images/main-logo.png" alt="Voxoun Games">
+    <p>We make VR games!</p>
+  </section>
+  
+  <!-- Main content with game items -->
+  <main class="full-width">
+    <section class="games" id="games">
+        <h1 class="title">Games</h1>
+        <a href="https://gorillaroyalevr.com" class="game-link" target="_blank">
+            <div class="game-item" style="background: #028a0d">
+              <img src="Images/Games/GorillaRoyale.png" class="game-icon">
+              <div class="game-content">
+                <div class="game-title">Gorilla Royale</div>
+                <div class="game-description">The biggest VR battle royale today!</div>
+              </div>
             </div>
-        </div>
-        -->
-    </head>
+        </a>
+        <a href="https://gorillaworldvr.com" class="game-link" target="_blank">
+            <div class="game-item" style="background: #00e013">
+              <img src="Images/Games/GorillaWorld.png" class="game-icon">
+              <div class="game-content">
+                <div class="game-title">Gorilla World</div>
+                <div class="game-description">Created by the players!</div>
+              </div>
+            </div>
+        </a>
+        <a href="https://fishgamevr.com" class="game-link" target="_blank">
+            <div class="game-item" style="background: #00c3ff">
+              <img src="Images/Games/FishGame.png" class="game-icon">
+              <div class="game-content">
+                <div class="game-title">Fish Game</div>
+                <div class="game-description">The first and the classic!</div>
+              </div>
+            </div>
+        </a>
+        <a href="https://www.meta.com/experiences/railway-surfers/6856207817756842/m" class="game-link" target="_blank">
+            <div class="game-item" style="background: rgb(206, 141, 0)">
+              <img src="Images/Games/RailwaySurfers.png" class="game-icon">
+              <div class="game-content">
+                <div class="game-title">Railway Surfers</div>
+                <div class="game-description">Endless fun!</div>
+              </div>
+            </div>
+        </a>
+      <!-- Add more games as needed -->
+    </section>
+    <section id="about" style="font-size: 25px; text-align: center;">
+        <h1 class="title">About</h1>
+        <p>We are a small game studio located in the EU!</p>
+        <p>
+            The goal of Voxoun Games is to provide the most innovative and fun games that touch the boundaries of what is possible with VR.
+        </p>
+    </section>
+    <section id="contact" style="font-size: 25px; text-align: center;">
+        <h1 class="title">Contact</h1>
+        <p>
+            Contact us at <a href="mailto:contact@voxoun.games">contact@voxoun.games</a>!
+        </p>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Voxoun Games. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Intersection Observer for sliding in game items when they enter the viewport.
+    document.addEventListener("DOMContentLoaded", function() {
+      const gameItems = document.querySelectorAll('.game-item');
 
-    <body class="body">
-        <div class="item">
-            <div class="fade">
-                <img src="Images/VoxounGamesNoBack.png">
-            </div>
-        </div>
+      const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.2
+      };
 
-        <div class="padding">
-            <div class="hidden">
-                <div class="content">
-                    <a class="text" style="font-size: 100px">PRODUCTS</a>
-                </div>
-            </div>
-            
-            <div class="hidden">
-                <div class="content">
-                    <div class="back" id="fishgameweb" onmouseover="FishGameHover()" onmouseleave="FishGameUnhover()" onclick='window.location.href = "https://fishgamevr.com"'>
-                        <img src="https://fishgamevr.com/FishGameTopThing.png" width="107" height="40" class="image" style="vertical-align: middle; top: 50%; -ms-transform: translateY(50%); transform: translateY(50%);">
-                        <a class="text">Become fish with friends!</a>
-                    </div>
-                </div>
-            </div>
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
 
-            <div class="hidden">
-                <div class="content">
-                    <div class="back" onmouseover="PhotonVRHover()" onmouseleave="PhotonVRUnhover()" onclick='window.location.href = "https://github.com/fchb1239/PhotonVR"'>
-                        <img src="https://github.com/fchb1239/PhotonVR/blob/main/Visuals/SmallerText.png?raw=true" width="100" height="28" class="image" style="vertical-align: middle; top: 50%; -ms-transform: translateY(50%); transform: translateY(50%);">
-                        <a class="text">Easy and simple VR multiplayer.</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="padding">
-            <div class="hidden">
-                <div class="content">
-                    <a class="text" style="font-size: 100px">ABOUT</a>
-                </div>
-            </div>
-            <div class="hidden">
-                <div class="content">
-                    <p class="text" style="font-size: 20">We are a small VR game studio based in the European Union</p>
-                    <p class="text" style="font-size: 20">We are behind Photon VR and Fish Game alongside several other projects</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="padding">
-            <div class="hidden">
-                <div class="content">
-                    <a class="text" style="font-size: 100px">CONTACT</a>
-                </div>
-            </div>
-            <div class="hidden">
-                <div class="content">
-                    <p class="text" style="font-size: 20">E-mail: contact@voxoun.games</p>
-                </div>
-            </div>
-        </div>
-    </body>
-
-    <link rel="stylesheet" type="text/css" href="styles.css">
+      gameItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
+</body>
 </html>
